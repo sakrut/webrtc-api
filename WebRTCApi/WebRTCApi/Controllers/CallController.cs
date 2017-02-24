@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Description;
 
 namespace WebRTCApi.Controllers
 {
@@ -12,11 +13,12 @@ namespace WebRTCApi.Controllers
     {
         
         private static Dictionary<string,Peer> Peers = new Dictionary<string, Peer>();
+        [ResponseType(typeof(List<Peer>))]
         public List<Peer> Get()
         {
             return Peers.Values.ToList();
         }
-
+        [ResponseType(typeof(Peer))]
         public Peer Get(string ID)
         {
             return Peers[ID];
@@ -32,6 +34,7 @@ namespace WebRTCApi.Controllers
             Peers[value.CallTo].Offer = value;
         }
 
+        [ResponseType(typeof(Peer))]
         public Peer Put([FromBody]Person value)
         {
             Peer peer = new Peer(Guid.NewGuid().ToString());

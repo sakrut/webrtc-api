@@ -243,3 +243,7 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+/WebRTCApi/WebRTCApi/Properties/PublishProfiles/webrtcapisakrut - Web Deploy.pubxml
+/WebRTCApi/WebRTCApi/Properties/PublishProfiles/webrtcapisakrut - FTP.pubxml
+/WebRTCApi/WebRTCApi/Properties/PublishProfiles/Test.pubxml
+/WebRTCApi/WebRTCApi/Properties/PublishProfiles
