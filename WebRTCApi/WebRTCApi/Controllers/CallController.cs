@@ -8,7 +8,6 @@ using System.Web.Http.Description;
 
 namespace WebRTCApi.Controllers
 {
-    [Authorize]
     public class CallController : ApiController
     {
         
@@ -16,7 +15,7 @@ namespace WebRTCApi.Controllers
         [ResponseType(typeof(List<Peer>))]
         public List<Peer> Get()
         {
-            return Peers.Values.ToList();
+            return Peers.Values.Reverse().ToList();
         }
         [ResponseType(typeof(Peer))]
         public Peer Get(string ID)
